@@ -27,6 +27,7 @@ class NoteInformationController extends Controller
             'note_information.date_note',
             'pieces_jointes.path'
         )
+         ->orderBy('note_information.date_note', 'desc') // ✅ ICI
         ->get()
         ->groupBy('reference')
         ->map(function ($items) {
